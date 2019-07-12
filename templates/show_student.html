@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show_student</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+    <table class="gridtable" align="center">
+        <tbody>
+            <tr>
+                <th colspan="3">学生列表</th>
+                <th colspan="4"><a href="/student/add_student/">添加学生信息</a></th>
+            </tr>
+            <tr>
+                <th>ID</th><th>学生姓名</th><th>所属班级</th><th colspan="2">操作</th>
+            </tr>
+            {% for student in student_list %}
+                <tr>
+                    <td>{{ student.id}}</td>
+                    <td>{{ student.student_name }}</td>
+                    <td>{{ student.student_grade.grades_name }}</td>
+                    <td><a href="/student/alter_student/?nid={{ student.id }}">编辑</a></td>
+                    <td><a href="/student/delete_student/?nid={{ student.id }}">删除</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

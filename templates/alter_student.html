@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_grade</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+    <div class="divForm">
+        <form method="post" action="/student/alter_student/?nid={{ nid }}">
+            请输入新的学生姓名：<input type="text" name="student_name" value="{{ student_name }}"><br>
+            <p>请选择新的班级名称</p><br>
+            <select name="grade" style="width: 600px;height: 40px">
+                {% for grade in grade_list %}
+                    <option value="{{ grade.id }}">{{ grade.grades_name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="提交">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+    <h1>
+        用户登录
+    </h1>
+    <form method="post" action="/login/">
+        用户名：<input type="text" name="username"><br><br>
+        密码：<input type="password" name="pwd"><br><br>
+        {{ msg }}<br><br>
+        <input type="submit" value="登录">
+
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show_classes</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+    <table class="gridtable" align="center">
+        <tbody>
+            <tr>
+                <th colspan="2">班级列表</th>
+                <th colspan="4"><a href="/student/add_grade/">添加班级信息</a></th>
+            </tr>
+            <tr>
+                <th>ID</th><th>班级名称</th><th colspan="2">操作</th>
+            </tr>
+            {% for grade in grade_list %}
+                <tr>
+                    <td>{{ grade.id}}</td>
+                    <td>{{ grade.grades_name }}</td>
+                    <td><a href="/student/alter_grade/?nid={{ grade.id }}">编辑</a></td>
+                    <td><a href="/student/delete_grade/?nid={{ grade.id }}">删除</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
